@@ -56,11 +56,11 @@ p {
   letter-spacing: 0.1rem;
   margin-top: 30px;
   transition: 0.3s ease;
-  transition-property: background-color, 	#a4243b;
+  transition-property: background-color, #a4243b;
 }
 .cta:hover {
   color: white;
-  background-color: 	#a4243b;
+  background-color: #a4243b;
 }
 .brand h1 {
   font-size: 3rem;
@@ -68,7 +68,7 @@ p {
   color: white;
 }
 .brand h1 span {
-  color:	#ffffff;
+  color: #ffffff;
 }
 
 /* Header section */
@@ -140,7 +140,7 @@ p {
   letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-  color: 	#a4243b;
+  color: #a4243b;
 }
 #header .hamburger {
   height: 60px;
@@ -248,7 +248,7 @@ p {
   left: 0;
   height: 100%;
   width: 0;
-  background-color: 	#a4243b;
+  background-color: #a4243b;
   animation: text_reveal_box 1s ease;
   animation-delay: 0.5s;
 }
@@ -269,8 +269,9 @@ p {
   flex-direction: column;
   text-align: center;
   max-width: 1500px;
-  margin: 0 auto;
+
   padding: 100px 0;
+  margin-top: -12rem;
 }
 #services .service-top {
   max-width: 500px;
@@ -283,47 +284,88 @@ p {
   flex-wrap: wrap;
   margin-top: 50px;
 }
-#services .service-item {
-  flex-basis: 80%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  padding: 30px;
-  border-radius: 10px;
-  background-image: url(img/web.webp);
-  background-size: cover;
-  margin: 10px 5%;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
 
-#services .service-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 80%);
-  opacity: 0.6;
-  z-index: -1;
-}
 #services .service-bottom .icon {
   height: 80px;
   width: 80px;
   margin-bottom: 20px;
 }
-#services .service-item h2 {
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+
+.card-parent {
+  display: flex;
+  justify-content: center;
+  margin-top: -12rem;
+  gap: 30px;
 }
-#services .service-item p {
-  color: white;
-  text-align: left;
+.card {
+  position: relative;
+  width: 250px;
+  height: 266px;
+
+  align-items: center;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 120%;
+  background-image: linear-gradient(180deg, #a4443b, #a4243b);
+  animation: rotate-border 5s linear infinite;
+}
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.content {
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url(img/web.webp);
+  inset: 4px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding-top: 110px;
+  background-size: cover;
+}
+.content1 {
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url(img/desaa.jpg);
+  inset: 4px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding-top: 110px;
+  background-size: cover;
+}
+.content2 {
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url(img/8787.jpeg);
+  inset: 4px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding-top: 110px;
+  background-size: cover;
+}
+.card h2 {
+  font-size: 21px;
+  color: #ffffff;
+  font-weight: 600;
 }
 /* End Services Section */
 
@@ -398,6 +440,7 @@ p {
 #projects .project-item:hover .project-img img {
   transform: scale(1.1);
 }
+
 /* End Projects section */
 
 /* About Section */
@@ -443,7 +486,7 @@ p {
   top: 19px;
   height: 98%;
   width: 98%;
-  border: 7px solid 	#a4243b;
+  border: 7px solid #a4243b;
   z-index: -1;
 }
 /* End About Section */
@@ -561,7 +604,7 @@ p {
 }
 @keyframes text_reveal_name {
   100% {
-    color: 	#a4243b;
+    color: #a4243b;
     font-weight: 700;
   }
 }
@@ -576,7 +619,9 @@ p {
   h1.section-title {
     font-size: 6rem;
   }
-
+  .card-parent {
+    display: grid;
+  }
   /* Hero */
   #hero h1 {
     font-size: 7rem;
@@ -702,3 +747,8 @@ p {
   }
 }
 /* End  Media Query For Desktop */
+@media only screen and (max-width: 770px) {
+  .card-parent {
+    display: grid;
+  }
+}
