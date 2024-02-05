@@ -619,9 +619,7 @@ p {
   h1.section-title {
     font-size: 6rem;
   }
-  .card-parent {
-    display: grid;
-  }
+ 
   /* Hero */
   #hero h1 {
     font-size: 7rem;
